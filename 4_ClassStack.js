@@ -11,8 +11,7 @@ class MyStack {
   }
   myPop(){
     if ( this.isEmpty() ) throw new Error('스택이 없습니다.');
-    const result = this.area[--this.index] = null
-    return result
+    this.area[--this.index] = null
   }
   myPeek(){
     return this.area[this.index-1];
