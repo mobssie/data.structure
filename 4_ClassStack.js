@@ -1,28 +1,34 @@
 class MyStack {
-  constructor(){
+  constructor(size){
     this.index = 0;
-    this.arr = [];
+    this.area = Array(size).fill(null);
+    this.size = size;
   }
   myPush(value){
-    this.arr[this.index] = value;
+    if(this.index === this.size) throw new Error('스택이 꽉 찼어요.');
+    this.area[this.index] = value;
     this.index += 1
   }
   myPop(){
-    if ( this.index <= 0 ) return null;
-    return this.arr[--this.index]
+    if ( stack.isEmpty() ) throw new Error('스택이 없습니다.');
+    this.index -= 1;
+    const result = this.area[this.index] = null
+    return result
   }
   myPeek(){
-    return this.arr[this.index];
+    return this.area[this.index];
   }
   isEmpty(){
-    if(this.index === 0 || this.arr.length === 0 ) return new Error('없어')
+    return this.index === 0
   }
 }
-let stack = new MyStack();
+let stack = new MyStack(5);
 
 stack.myPush(11);
 stack.myPush(22);
 stack.myPush(33);
-console.log(stack.myPop());
-console.log(stack.myPop());
-console.log(stack.myPeek());
+console.log('stack', stack)
+stack.myPop()
+stack.myPop()
+stack.myPop()
+console.log('stack', stack)
