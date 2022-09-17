@@ -2,7 +2,7 @@
  * @return {Array} [2,3,4, ... 99, 100]
  */
 function getNums () {
-    return arr = Array.from({length: 99},((_, i)=> i+2))
+    return Array.from({length: 99},((_, i)=> i+2))
 }
 
 /**
