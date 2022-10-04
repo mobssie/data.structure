@@ -1,8 +1,12 @@
-function 역순재귀(n){
-  if(n < 1) return;
-  console.log(n)
-  n--
-  return 역순재귀(n)
-}
 
-역순재귀(10)
+function solution(n){
+  function DFS(L){
+      if(L===0) return;
+      else {
+        console.log(L)
+        DFS(L-1)
+      }
+  }
+  DFS(n)
+}
+solution(3)

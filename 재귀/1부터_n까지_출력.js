@@ -1,9 +1,12 @@
 
-function sum(startNumber, n){
-    console.log(startNumber);
-    if(startNumber === n) return console.log('끝');
-    startNumber++;
-    return sum(startNumber, n);
+function solution(n){
+    function DFS(L){
+        if(L===0) return;
+        else {
+            DFS(L-1)
+            console.log(L)
+        }
+    }
+    DFS(n)
 }
-
-console.log(sum(1, 100));
+solution(3)
