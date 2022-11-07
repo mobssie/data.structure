@@ -16,25 +16,25 @@
   let dy=[0, 1, 1, 1, 0, -1, -1, -1];
   let queue=[];
   for(let i=0; i<n; i++){
-      for(let j=0; j<m; j++){
-          if(grid[i][j]===1){
-              grid[i][j]=0;
-              queue.push([i, j]);
-              answer++;
-              while(queue.length){
-                  let x=queue.shift();
-                  for(let k=0; k<8; k++){
-                      let nx=x[0]+dx[k];
-                      let ny=x[1]+dy[k];
-                      if(nx>=0 && nx<n && ny>=0 && ny<n && grid[nx][ny]===1){
-                          grid[nx][ny]=0;
-                          queue.push([nx, ny]);
-                      }
-                  }
-              }
-              
+    for(let j=0; j<m; j++){
+      if(grid[i][j]===1){
+        grid[i][j]=0;
+        queue.push([i, j]);
+        answer++;
+        while(queue.length){
+          let x=queue.shift();
+          for(let k=0; k<8; k++){
+            let nx=x[0]+dx[k];
+            let ny=x[1]+dy[k];
+            if(nx>=0 && nx<n && ny>=0 && ny<n && grid[nx][ny]===1){
+                grid[nx][ny]=0;
+                queue.push([nx, ny]);
+            }
           }
+        }
+          
       }
+    }
   }
   return answer;
 };
